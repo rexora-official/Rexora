@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REXORA — Loading...</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Loader Container */
+    .loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* REXORA Text */
+    .loader h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 8px;
+      color: #00ffe0;
+      text-transform: uppercase;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    /* Loading bar */
+    .bar {
+      margin-top: 20px;
+      width: 220px;
+      height: 4px;
+      background: #333;
+      overflow: hidden;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00ffe0, #0088ff);
+      animation: loading 2.5s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0;
+      }
+
+      to {
+        text-shadow: 0 0 25px #00ffe0, 0 0 50px #00ffe0;
+      }
+    }
+
+    @keyframes loading {
+      0% {
+        width: 0%;
+      }
+
+      50% {
+        width: 100%;
+      }
+
+      100% {
+        width: 0%;
+      }
+    }
+
+    /* Fade-out when page loads */
+    .hidden {
+      opacity: 0;
+      visibility: hidden;
+      transition: all .6s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loader" id="loader">
+    <h1>REXORA</h1>
+    <div class="bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <div id="content" style="display:none; text-align:center; color:white; margin-top:20%;">
+    <h2>Welcome to Rexora Official</h2>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        // 1. Optional: Fade out the loader for a smoother transition
+        document.getElementById("loader").classList.add("hidden");
+
+        // 2. Set the window location to your homepage
+        window.location.href = 'index.html';
+
+        // 3. The original line to show hidden content is now removed 
+        //    because we are redirecting to a new page instead.
+        // document.getElementById("content").style.display="block"; 
+      }, 2500); // Wait 2.5 seconds (the length of your animation)
+    });
+  </script>
+</body>
+
+</html>

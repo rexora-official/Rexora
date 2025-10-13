@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rexora — Our Services</title>
+  <meta name="description" content="Rexora - Explore all our digital marketing services and packages.">
+  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512(1).png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #020816;
+      --accent: #1E90FF;
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --text-light: #f0f8ff;
+      --text-metal: #c9d6e3;
+      --radius: 16px;
+      --max-width: 1200px;
+      --font-sans: 'Montserrat', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: var(--font-sans);
+      background: var(--navy);
+      color: var(--text-light);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 100px 0;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.2;
+      mix-blend-mode: screen;
+      animation: float 12s infinite ease-in-out alternate;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      100% {
+        transform: translate(60px, -60px) scale(1.05);
+      }
+    }
+
+    .blob-1 {
+      top: 10%;
+      left: 10%;
+      width: 400px;
+      height: 400px;
+      background: #004d99;
+    }
+
+    .blob-2 {
+      bottom: 5%;
+      right: 5%;
+      width: 300px;
+      height: 300px;
+      background: #1E90FF;
+      animation-delay: -3s;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 15px 0;
+      background: rgba(2, 8, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-metal);
+    }
+
+    .nav-actions a {
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-actions a:hover {
+      color: var(--accent);
+    }
+
+    .nav-actions a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-actions a:hover::after {
+      width: 80%;
+    }
+
+    .services-content {
+      text-align: center;
+    }
+
+    .services-content h2 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 50px;
+      color: var(--accent);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 255, 255, 0.05) inset;
+      padding: 30px;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.2, 1);
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .package-card h3 {
+      font-size: 24px;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .package-card .price {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 10px 0 20px;
+    }
+
+    .package-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .package-card ul li {
+      padding: 8px 0;
+      color: var(--text-metal);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin: 0 12px;
+      padding: 15px 35px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-btn.primary {
+      background: linear-gradient(135deg, #0052CC, var(--accent));
+      color: white;
+      box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+    }
+
+    .cta-btn.secondary {
+      background: var(--glass-bg);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: var(--text-light);
+      backdrop-filter: blur(10px);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(30, 144, 255, 0.5);
+    }
+
+    .footer {
+      padding: 30px 0;
+      text-align: center;
+      color: var(--text-metal);
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 1200px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .brand-logo {
+      /* Set a smooth transition for the box-shadow property */
+      transition: box-shadow 0.3s ease-in-out;
+      /* You may want to ensure it is displayed as a block or inline-block for better shadow behavior */
+      display: inline-block;
+      border: #0052CC solid 2px;
+      border-radius: 25%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav-inner">
+      <img src="/assets/apple-touch-icon.png" alt="REXORA LOGO" width="50" height="50" class="brand-logo">
+      <div class="brand" style="transform: translateX(-300%) translateY(1%);">REXORA</div>
+      <nav class="nav-actions">
+        <a href="index.html">Home</a>
+        <a href="/index.html#services" class="active">Services</a>
+        <a href="/index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section" id="services">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container services-content">
+      <h2>Our Services</h2>
+      <div class="pricing-grid">
+
+        <div class="glass-card package-card">
+          <div>
+            <h3>Basic Package</h3>
+            <div class="price">₹1,999 / month</div>
+            <ul>
+              <li>4 Social Media Posts / month</li>
+              <li>1 Promotional Video</li>
+              <li>Account Setup & Branding</li>
+            </ul>
+          </div>
+          <a href="/index.html#contact" class="cta-btn primary">Start Basic</a>
+        </div>
+
+        <div class="glass-card package-card">
+          <div>
+            <h3>Standard Package</h3>
+            <div class="price">₹3,999 / month</div>
+            <ul>
+              <li>8 Social Media Posts / month</li>
+              <li>2 Promotional Videos</li>
+              <li>Account Optimization (Insta/Facebook)</li>
+              <li>Monthly Growth Report</li>
+            </ul>
+          </div>
+          <a href="/index.html#contact" class="cta-btn primary">Go Standard</a>
+        </div>
+
+        <div class="glass-card package-card">
+          <div>
+            <h3>Premium Package</h3>
+            <div class="price">₹5,999 / month</div>
+            <ul>
+              <li>12 Social Media Posts / month</li>
+              <li>4 Promotional Videos / Shorts</li>
+              <li>YouTube Channel Management</li>
+              <li>SEO + Strategy Support</li>
+            </ul>
+          </div>
+          <a href="/index.html#contact" class="cta-btn primary">Unlock Premium</a>
+        </div>
+
+        <div class="glass-card package-card">
+          <div>
+            <h3>Custom Projects</h3>
+            <div class="price">Quote Based</div>
+            <ul>
+              <li>Full Website Development</li>
+              <li>Large-Scale Campaign</li>
+              <li>Dedicated Management</li>
+              <li>Advanced Analytics</li>
+            </ul>
+          </div>
+          <a href="/index.html#contact" class="cta-btn secondary">Get a Quote</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2025 Rexora. All rights reserved.
+  </footer>
+
+</body>
+
+</html>

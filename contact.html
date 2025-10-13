@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rexora — Contact</title>
+    <meta name="description" content="Connect with Rexora for digital marketing, branding, and creative projects.">
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512(1).png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #020816;
+            --accent: #1E90FF;
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            --text-light: #f0f8ff;
+            --text-metal: #c9d6e3;
+            --radius: 16px;
+            --max-width: 1200px;
+            --font-sans: 'Montserrat', system-ui, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--navy);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(2, 8, 22, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 15px 0;
+            z-index: 10;
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-metal);
+        }
+
+        .nav-actions a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-actions a:hover {
+            color: var(--accent);
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 22px;
+            width: 100%;
+            max-width: var(--max-width);
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(255, 255, 255, 0.05) inset;
+            padding: 30px;
+            transition: all 0.4s ease;
+        }
+
+        .cta-btn.primary {
+            background: linear-gradient(135deg, #0052CC, var(--accent));
+            color: white;
+            border: none;
+            border-radius: 999px;
+            padding: 14px 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cta-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(30, 144, 255, 0.4);
+        }
+
+        .contact-panel h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .quick-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .quick-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(30, 144, 255, 0.4);
+        }
+
+        .quick-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            background: linear-gradient(120deg, rgba(30, 144, 255, 0.4), transparent, rgba(30, 144, 255, 0.4));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .quick-card:hover::after {
+            opacity: 0.4;
+        }
+
+        .qc-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(30, 144, 255, 0.2);
+            flex-shrink: 0;
+        }
+
+        .qc-body {
+            flex: 1;
+        }
+
+        .qc-title {
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .qc-meta {
+            font-size: 14px;
+            color: var(--text-metal);
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            background: rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-metal);
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 50px;
+        }
+
+        .brand-logo {
+            /* Set a smooth transition for the box-shadow property */
+            transition: box-shadow 0.3s ease-in-out;
+            /* You may want to ensure it is displayed as a block or inline-block for better shadow behavior */
+            display: inline-block;
+            border: #0052CC solid 2px;
+            border-radius: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-inner">
+            <img src="/assets/apple-touch-icon.png" alt="REXORA LOGO" width="50" height="50" class="brand-logo">
+            <div class="brand" style="transform: translateX(-320%) translateY(1%);">REXORA</div>
+            <nav class="nav-actions">
+                <a href="index.html">Home</a>
+                <a href="service.html">Services</a>
+                <a href="contact.html" style="color: var(--accent);">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact">
+        <div class="contact-grid">
+            <div class="glass-card contact-panel">
+                <h3>Quick Contact</h3>
+                <div class="quick-grid">
+
+                    <div class="quick-card" data-type="whatsapp">
+                        <div class="qc-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp"
+                                width="28">
+                        </div>
+                        <div class="qc-body">
+                            <div class="qc-title">WhatsApp</div>
+                            <div class="qc-meta">Chat with us</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-card" data-type="telegram">
+                        <div class="qc-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"
+                                width="28">
+                        </div>
+                        <div class="qc-body">
+                            <div class="qc-title">Telegram</div>
+                            <div class="qc-meta">Join or message</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-card" data-type="instagram">
+                        <div class="qc-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+                                width="28">
+                        </div>
+                        <div class="qc-body">
+                            <div class="qc-title">Instagram</div>
+                            <div class="qc-meta">@rexoraofiicial_35</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-card" data-type="email">
+                        <div class="qc-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="28">
+                        </div>
+                        <div class="qc-body">
+                            <div class="qc-title">Email</div>
+                            <div class="qc-meta">rexora35@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="" class="glass-card contact-form">
+                <h2 style="color: var(--accent); margin-bottom: 10px; text-align: center;">Your Vision, </h2>
+                <h2 style="color: var(--accent); margin-bottom: 10px; text-align: center;">Our Mission </h2>
+                <h2 style="color: white; margin-bottom: 10px; text-align: center;">Reach Out !</h2>
+                <br>
+                <br>
+                <p style="text-align: center;">We believe every idea deserves attention and care. Your vision drives our
+                    creativity, and we’re committed to turning it into reality. Whether it’s a small project or a big
+                    dream, we’re here to collaborate, guide, and deliver results that exceed expectations. Reach out to
+                    us and let’s work together to bring your ideas to life with passion, dedication, and innovation.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2025 Rexora. All rights reserved.</footer>
+
+    <script>
+        document.querySelectorAll('.quick-card').forEach(card => {
+            card.addEventListener('click', e => {
+                const type = card.dataset.type;
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = e.offsetX + 'px';
+                ripple.style.top = e.offsetY + 'px';
+                card.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+
+                if (type === 'whatsapp') {
+                    window.open('https://wa.me/919263298829?text=Hello%20Rexora%2C%20I%27d%20like%20to%20enquire%20about%20your%20services.', '_blank');
+                } else if (type === 'telegram') {
+                    window.open('https://t.me/+919263298829', '_blank');
+                } else if (type === 'instagram') {
+                    window.open('https://www.instagram.com/rexoraofiicial_35', '_blank');
+                } else if (type === 'email') {
+                    window.location.href = 'mailto:rexora35@gmail.com', '_blank';
+                }
+            });
+        });
+
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const work = document.getElementById('work').value.trim();
+                if (!name || !email || !work) {
+                    alert('Please fill out all fields.');
+                    return;
+                }
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nWork Required: ${work}`);
+                window.location.href = `mailto:rexora35@gmail.com?subject=${encodeURIComponent('Rexora Project Enquiry')}&body=${body}`;
+            });
+        }
+    </script>
+</body>
+
+</html>

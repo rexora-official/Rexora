@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <base href="/Rexora/assets/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rexora — Scale Beyond Limits</title>
+    <meta name="description"
+        content="Rexora Official — A next-gen digital agency delivering branding, design, and development solutions to help brands scale beyond limits.">
+    <meta name="keywords"
+        content="Rexora, Digital Agency, Web Design, Branding, Marketing, Development, Rexora Official, Scale Beyond Limits">
+
+    <link rel="canonical" href="https://www.rexora-official.com/">
+
+
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Rexora — Scale Beyond Limits">
+    <meta property="og:description"
+        content="Rexora is a creative digital agency that helps brands grow through strategy, design, and technology.">
+    <meta property="og:image" content="https://www.rexora-official.com/assets/og-image.jpg">
+    <meta property="og:url" content="https://www.rexora-official.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Rexora Official">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rexora — Scale Beyond Limits">
+    <meta name="twitter:description" content="Empowering brands through strategy, design, and technology.">
+    <meta name="twitter:image" content="https://www.rexora-official.com/assets/twitter-card.jpg">
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rexora Official",
+    "url": "https://www.rexora-official.com/",
+    "logo": "https://www.rexora-official.com/assets/logo.png",
+    "sameAs": [
+      "https://www.instagram.com/rexora.official",
+      "https://www.linkedin.com/company/rexora-official",
+      "https://twitter.com/rexoraofficial"
+    ],
+    "description": "Rexora is a digital agency helping businesses grow through branding, web design, and marketing.",
+    "founder": {
+      "@type": "Person",
+      "name": "Ritik Raj"
+    },
+    "foundingDate": "2025-01-01",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "India",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta name="theme-color" content="#0f0f0f">
+    <link rel="shortcut icon" href="/Rexora/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Rexora/href/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Rexora/assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/Rexora/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Rexora/assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512(1).png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --navy: #020816;
+            /* Deep Navy Background */
+            --accent: #1E90FF;
+            /* Dodger Blue */
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            /* Higher Opacity and loquid glass touch */
+            --text-light: #f0f8ff;
+            --text-metal: #c9d6e3;
+            --radius: 16px;
+            --max-width: 1200px;
+            --font-sans: 'Montserrat', system-ui, sans-serif;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: var(--font-sans);
+            background: var(--navy);
+            color: var(--text-light);
+            /* *** SCROLLING FIX: Re-enable vertical scroll *** */
+            overflow-x: hidden;
+            scroll-behavior: ultra smooth;
+        }
+
+        /* Container and Section Setup */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Glassmorphism/Liquid Card Style */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            /* High blur for solid iOS widget feel */
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            /* Solid border for definition */
+            border-radius: var(--radius);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 255, 255, 0.05) inset;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.2, 1);
+        }
+
+        /* Animation: Hover Effect */
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Nav (Fixed top for all sections) */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+            background: rgba(2, 8, 22, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-metal);
+        }
+
+        .nav-actions a {
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Animation: Nav Hover (Underline effect) */
+        .nav-actions a:hover {
+            color: var(--accent);
+        }
+
+        .nav-actions a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-actions a:hover::after {
+            width: 80%;
+        }
+
+        .nav-actions a.active {
+            color: var(--accent);
+        }
+
+
+        /* --- BACKGROUND DECORATION (Subtle Blobs) --- */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+            mix-blend-mode: screen;
+            z-index: 0;
+            animation: float 12s infinite ease-in-out alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(60px, -60px) scale(1.05);
+            }
+        }
+
+        .blob-1 {
+            top: 10%;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: #004d99;
+        }
+
+        .blob-2 {
+            bottom: 5%;
+            right: 5%;
+            width: 300px;
+            height: 300px;
+            background: #1E90FF;
+            animation-delay: -3s;
+        }
+
+
+        /* === SECTION 1: HOME (HERO) === */
+        .hero-content {
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 96px;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 32px;
+            color: var(--text-metal);
+            margin-bottom: 50px;
+        }
+
+        /* === BUTTON STYLES WITH ANIMATION === */
+        .cta-btn {
+            display: inline-block;
+            margin: 0 12px;
+            padding: 15px 35px;
+            border-radius: 999px;
+            /* Pill Shape */
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-btn.primary {
+            background: linear-gradient(135deg, #0052CC, var(--accent));
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--text-light);
+            backdrop-filter: blur(10px);
+            
+        }
+
+        .cta-btn.secondary {
+            background: var(--glass-bg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--text-light);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Animation: Button Hover/Active */
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(30, 144, 255, 0.5);
+        }
+
+        .cta-btn:active {
+            transform: translateY(0px);
+            box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
+        }
+
+        /* --- DETAILS SECTION (Vertical Scroll Layout) --- */
+        .details-section {
+            margin-top: 50px;
+            max-width: 800px;
+            margin: 50px auto 0;
+            text-align: left;
+        }
+
+        .details-section h2 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        /* === SECTION 2: SERVICES (Packages) === */
+        .services-content {
+            width: 100%;
+            text-align: center;
+        }
+
+        .services-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .package-card {
+            min-height: 480px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .package-card h3 {
+            font-size: 24px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .package-card .price {
+            font-size: 30px;
+            font-weight: 800;
+            margin: 10px 0 20px;
+        }
+
+        .package-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .package-card ul li {
+            padding: 8px 0;
+            color: var(--text-metal);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        /* === SECTION 3: CONTACT - UPDATED FOR RESPONSIVENESS === */
+        .contact-content {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            /* Added Flexbox to center content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .contact-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .contact-form-wrapper {
+            padding: 40px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-metal);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.4);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+        }
+
+        .info-row {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+            color: var(--text-metal);
+        }
+
+        .info-row a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Updated: Responsive Contact Button Styling */
+        /* Overrides the original inline absolute positioning */
+        .contact-content .cta-btn {
+            position: static;
+            transform: none;
+            margin: 20px 0 30px 0;
+            /* Add vertical spacing */
+            width: fit-content;
+            /* Ensure the button isn't full width */
+        }
+
+
+        .brand-logo {
+            /* Set a smooth transition for the box-shadow property */
+            transition: box-shadow 0.3s ease-in-out;
+            /* You may want to ensure it is displayed as a block or inline-block for better shadow behavior */
+            display: inline-block;
+            border: #0052CC solid 2px;
+            border-radius: 25%;
+        }
+
+        .footer {
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-metal);
+            font-size: 14px;
+        }
+
+        /* --- REVEAL ANIMATION (FOR VERTICAL SCROLL) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.2, 0.9, 0.2, 1);
+        }
+
+        .reveal.inview {
+            opacity: 1;
+            transform: none;
+        }
+
+
+        /* --- NEW CSS for Menu Toggle --- */
+
+        /* Base style for the toggle button */
+        .menu-toggle {
+            display: none;
+            /* Hidden by default on desktop */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 101;
+            /* Above other nav content */
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--text-light);
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        /* Style for when the menu is active (e.g., cross icon) */
+        .menu-toggle.is-active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.is-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.is-active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+
+        /* Media Queries (Responsive) */
+        @media (max-width: 1200px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-content h1 {
+                font-size: 72px;
+            }
+
+            .hero-content p {
+                font-size: 24px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                min-height: 80vh;
+                padding: 60px 0;
+            }
+
+            .services-content h2,
+            .contact-content h2 {
+                font-size: 36px;
+            }
+        }
+
+        /* 💥 FIX: Prevent scroll/layout shift during loading 💥 */
+        .loading-active {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- NEW LOADER STYLES (FROM loading.html) --- */
+        /* ------------------------------------------------ */
+
+        /* Loader Container - replaces the old fixed positioning/background */
+        .loader-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            /* Use a very high z-index */
+            /* New futuristic background gradient */
+            background: radial-gradient(circle at center, #0b0f1a 0%, #061027 100%);
+            font-family: var(--font-sans);
+            transition: opacity .6s ease, visibility .6s ease;
+        }
+
+        /* Background grid lines */
+        .bg-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(
+                    to right,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 1px,
+                    transparent 80px
+                ),
+                repeating-linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 1px,
+                    transparent 60px
+                );
+            z-index: 1;
+        }
+
+        /* REXORA Logo Text (Metallic Shine) */
+        .logo-text {
+            position: relative;
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            /* Metallic Shine effect with blue highlight */
+            background: linear-gradient(90deg, #111, #1c1f25 20%, #0048ff 50%, #0b0f1a 80%, #0b0f1a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+            z-index: 2;
+        }
+          @media (max-width: 1200px) {
+            .brand{
+                display: none;
+            }
+        /* Metallic shine animation */
+        @keyframes shine {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        /* Sub loading bar */
+        .loader-container .bar {
+            position: relative;
+            margin-top: 25px;
+            width: 240px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            border-radius: 3px;
+            z-index: 2;
+        }
+
+        /* Sub loading progress */
+        .loader-container .progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #008cff, #00d5ff);
+            animation: loadbar 2.5s ease-in-out infinite;
+        }
+
+        @keyframes loadbar {
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 100%;
+            }
+
+            100% {
+                width: 0%;
+            }
+        }
+
+        /* Class to trigger fade-out effect */
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+
+        @media (max-width: 500px) {
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            .hero-content p {
+                font-size: 20px;
+            }
+
+            /* Show the hamburger icon on small screens */
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Hide the original navigation links by default on small screens */
+            .nav-actions {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(2, 8, 22, 0.95);
+                /* Semi-transparent navy overlay */
+                /* backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px); */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                /* Initially off-screen */
+                transition: transform 0.4s ease-in-out;
+                z-index: 99;
+                /* Below the header but above content */
+            }
+
+            /* Override the previously-used mobile media query for nav links */
+            .nav-actions a:not(:last-child) {
+                display: block;
+                /* Show all links in the mobile menu */
+            }
+
+            .nav-actions a {
+                font-size: 28px;
+                padding: 20px 0;
+                margin: 5px 0;
+            }
+
+            /* State when menu is open */
+            .nav-inner.menu-open .nav-actions {
+                transform: translateX(0);
+                /* Slide menu on-screen */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- LOADER STRUCTURE FROM loading.html -->
+    <div class="loader-container" id="loader">
+        <div class="bg-lines"></div>
+        <h1 class="logo-text">REXORA</h1>
+        <div class="bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container nav-inner">
+            <img src="/Rexora/assets/apple-touch-icon.png" alt="REXORA LOGO" width="50" height="50" class="brand-logo">
+            <div class="brand" style="transform: translateX(-300%) translateY(1%);">REXORA</div>
+
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-actions">
+                <a href="/Rexora/">Home</a>
+                <a href="/Rexora/index.html#services">Services</a>
+                <a href="/Rexora/index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" id="home">
+        <div class="blob blob-1"></div>
+        <div class="container hero-content">
+            <h1 class="reveal">REXORA</h1>
+            <p class="reveal" style="transition-delay: 0.2s;">Scale Beyond Limits with </p>
+
+
+            <div class="cta-row reveal" style="transition-delay: 0.4s;">
+                <a href="/Rexora/service.html" class="cta-btn primary">View Services</a>
+                <a href="/Rexora/contact.html" class="cta-btn secondary">Get in Touch</a>
+
+            </div>
+
+            <div class="liqiud-glass details-section reveal" style="transition-delay: 0.6s;">
+                <h2>Why Choose Rexora?</h2>
+                <p style="color: var(--text-metal);">At Rexora, we focus on what matters most — real growth and
+                    measurable impact. With a deep understanding of local audiences, we craft creative yet affordable
+                    digital strategies that connect with people and drive traffic. Our promise is simple: fast delivery,
+                    transparent pricing, and consistent results — so your business not only goes online, it stands out.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="blob blob-2" style="top: 10%; left: 5%;"></div>
+        <div class="container services-content">
+            <h2 class="reveal">💼 Our Services</h2>
+            <div class="pricing-grid">
+
+                <div class="glass-card package-card reveal" style="transition-delay: 0.1s;">
+                    <div>
+                        <h3>⭐ Basic Package</h3>
+                        <div class="price">₹1,999 / month</div>
+                        <ul>
+                            <li>4 Social Media Posts / month</li>
+                            <li>1 Promotional Video</li>
+                            <li>Account Setup & Branding</li>
+                        </ul>
+                    </div>
+                    <a href="/Rexora/contact.html" class="cta-btn primary">Start Basic</a>
+                </div>
+
+                <div class="glass-card package-card reveal" style="transition-delay: 0.2s;">
+                    <div>
+                        <h3>🚀 Standard Package</h3>
+                        <div class="price">₹3,999 / month</div>
+                        <ul>
+                            <li>8 Social Media Posts / month</li>
+                            <li>2 Promotional Videos</li>
+                            <li>Account Optimization (Insta/Facebook)</li>
+                            <li>Monthly Growth Report</li>
+                        </ul>
+                    </div>
+                    <a href="/Rexora/contact.html" class="cta-btn primary">Go Standard</a>
+                </div>
+
+                <div class="glass-card package-card reveal" style="transition-delay: 0.3s;">
+                    <div>
+                        <h3>🔥 Premium Package </h3>
+                        <div class="price">₹5,999 / month</div>
+                        <ul>
+                            <li>12 Social Media Posts / month</li>
+                            <li>4 Promotional Videos / Shorts</li>
+                            <li>YouTube Channel Management</li>
+                            <li>SEO + Strategy Support</li>
+                        </ul>
+                    </div>
+                    <a href="/Rexora/contact.html" class="cta-btn primary">Unlock Premium</a>
+                </div>
+
+                <div class="glass-card package-card reveal" style="transition-delay: 0.4s;">
+                    <div>
+                        <h3>Custom Projects</h3>
+                        <div class="price">Quote Based</div>
+                        <ul>
+                            <li>Full Website Development</li>
+                            <li>Large-Scale Campaign</li>
+                            <li>Dedicated Management</li>
+                            <li>Advanced Analytics</li>
+                        </ul>
+                    </div>
+                    <a href="/Rexora/contact.html" class="cta-btn secondary">Get a Quote</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container contact-content">
+            <a href="/Rexora/contact.html" class="cta-btn primary send-btn">Get in Touch</a>
+            <div class="info-row">
+                Or Contact us directly:
+                <br>
+                Email: <a href="mailto:rexora35@gmail.com">rexora35@gmail.com</a>
+                | Instagram: <a href="https://www.instagram.com/rexoraofiicial_35"
+                    target="_blank">@rexoraofiicial_35</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2025 Rexora. All rights reserved.
+    </footer>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // --- 1. INTERSECTION OBSERVER (Reveal on Scroll Animation) ---
+            const io = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('inview');
+                        // Stop observing once it's visible
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1, // Trigger when 10% of element is visible
+                rootMargin: '0px 0px -50px 0px' // Start slightly before reaching the bottom
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+
+            // --- 2. CONTACT FORM LOGIC (using mailto) ---
+            // NOTE: The original form logic is commented out as the form elements are no longer in the HTML.
+            // const form = document.getElementById('contactForm');
+            // if (form) {
+            //     form.addEventListener('submit', function (e) {
+            //         e.preventDefault();
+            //         const name = form.querySelector('#name').value.trim();
+            //         const email = form.querySelector('#email').value.trim();
+            //         const work = form.querySelector('#work').value.trim();
+
+            //         if (!name || !email || !work) {
+            //             alert('Please fill out all required fields.');
+            //             return;
+            //         }
+
+            //         const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nWork Required: ${work}`);
+            //         window.location.href = `mailto:rexora35@gmail.com?subject=${encodeURIComponent('Website Inquiry - New Project')}&body=${body}`;
+            //     });
+            // }
+
+
+            // --- 3. NAV TOGGLE LOGIC (NEW) ---
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navInner = document.querySelector('.nav-inner');
+            const navLinks = document.querySelectorAll('.nav-actions a');
+
+            if (menuToggle && navInner) {
+                // Function to toggle the menu state
+                function toggleMenu() {
+                    menuToggle.classList.toggle('is-active');
+                    navInner.classList.toggle('menu-open');
+                }
+
+                // Toggle menu on button click
+                menuToggle.addEventListener('click', toggleMenu);
+
+                // Close menu when a link is clicked (for single-page navigation)
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navInner.classList.contains('menu-open')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+            }
+        });
+        /* ---------------------------------------------------- */
+        /* 3. LOADER JAVASCRIPT LOGIC (Body controlled here) */
+        /* ---------------------------------------------------- */
+        // Define the duration of your loading animation in milliseconds (2.5s)
+        const LOADING_DURATION = 2500;
+        const body = document.body;
+
+        // FIX 2: Lock the screen immediately using JS before anything else loads
+        // This prevents the page from scrolling while the loader is displayed and anchors 100vh.
+        body.style.overflow = 'hidden';
+        body.style.height = '100vh';
+
+        // Wait until all resources (images, scripts, etc.) are loaded
+        window.addEventListener("load", () => {
+            // Wait for the duration of the animation
+            setTimeout(() => {
+                const loader = document.getElementById("loader");
+
+                // Step 1: Start the fade-out effect on the loader
+                loader.classList.add("hidden");
+
+                // Restore scrolling and natural height to the body 
+                body.style.overflow = ''; // Clears the inline style
+                body.style.height = ''; // Clears the inline style
+
+                // Optional: Remove the loader element completely from the DOM 
+                // after its transition is done to clean up.
+                setTimeout(() => {
+                    // Remove the loader after the CSS transition (.6s) is finished
+                    loader.remove();
+                }, 700);
+
+            }, LOADING_DURATION);
+        });
+    </script>
+</body>
+
+</html>
