@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYPMYFZVV2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CYPMYFZVV2');
+  </script>
+
+  <!-- Structured Data (Schema Markup for Rexora Reve & Ritik Raj) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rexora Reve",
+    "url": "https://www.rexora-reve.com/",
+    "logo": "https://www.rexora-reve.com/assets/logo.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Ritik Raj",
+      "jobTitle": "Founder & Creative Director",
+      "sameAs": [
+        "https://www.instagram.com/rexoraofiicial_35/",
+        "mailto:rexora35@gmail.com"
+      ]
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "rexora35@gmail.com",
+      "contactType": "customer support",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "description": "Rexora Reve — a digital marketing and creative studio led by Ritik Raj, building modern brand identities and growth-focused designs.",
+    "foundingDate": "2025",
+    "brand": "Rexora Reve"
+  }
+  </script>
+
+  <meta name="author" content="Ritik Raj, Rexora Reve">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rexora Reve — Scale Beyond Limits</title>
+  <meta name="description" content="Rexora Reve — A premium digital agency delivering branding, design, and development solutions. Where dreams become empires.">
+  <meta name="keywords" content="Rexora Reve, Digital Agency, Luxury Branding, Web Design, Marketing">
+  <link rel="canonical" href="https://www.rexora-reve.com/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Rexora Reve — Scale Beyond Limits">
+  <meta property="og:description" content="Premium digital agency crafting luxury brand experiences.">
+  <meta name="theme-color" content="#000000">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --black: #000000;
+        --dark-gray: #0a0a0a;
+        --chrome: #C0C0C0;
+        --silver: #E8E8E8;
+        --platinum: #F5F5F5;
+        --accent: #4A90E2;
+        --glass-dark: rgba(0, 0, 0, 0.6);
+        --glass-light: rgba(255, 255, 255, 0.05);
+        --radius: 20px;
+        --max-width: 1200px;
+        --font-sans: 'Montserrat', system-ui, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        height: 100%;
+        font-family: var(--font-sans);
+        background: var(--black);
+        color: var(--silver);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section {
+        padding: 100px 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Premium Glass Card */
+    .glass-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.8),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.9),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            0 0 40px rgba(192, 192, 192, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Chrome Navigation */
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 20px 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .brand {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        background: linear-gradient(135deg, #FFFFFF, #C0C0C0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .nav-actions {
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-actions a {
+        color: var(--chrome);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+        position: relative;
+    }
+
+    .nav-actions a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--silver), transparent);
+        transition: width 0.3s;
+    }
+
+    .nav-actions a:hover {
+        color: var(--platinum);
+    }
+
+    .nav-actions a:hover::after {
+        width: 100%;
+    }
+
+    /* Metallic Background Elements */
+    .chrome-ray {
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, rgba(192, 192, 192, 0.1), transparent);
+        animation: shimmer 8s infinite linear;
+    }
+
+    @keyframes shimmer {
+        0%, 100% { opacity: 0.1; }
+        50% { opacity: 0.3; }
+    }
+
+    .chrome-ray:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .chrome-ray:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .chrome-ray:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .chrome-ray:nth-child(4) { left: 70%; animation-delay: 6s; }
+    .chrome-ray:nth-child(5) { right: 10%; animation-delay: 1s; }
+
+    /* Hero Section */
+    .hero-content {
+        text-align: center;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        z-index: 2;
+    }
+
+    .hero-content h1 {
+        font-size: 96px;
+        font-weight: 800;
+        line-height: 1.05;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #FFFFFF, #C0C0C0, #808080);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-content p {
+        font-size: 28px;
+        color: var(--chrome);
+        margin-bottom: 50px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    /* Premium Buttons */
+    .cta-btn {
+        display: inline-block;
+        margin: 0 15px;
+        padding: 18px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        letter-spacing: 1px;
+    }
+
+    .cta-btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+
+    .cta-btn:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .cta-btn.primary {
+        background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    .cta-btn.primary:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 48px rgba(192, 192, 192, 0.2);
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .cta-btn.secondary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: var(--silver);
+    }
+
+    .cta-btn.secondary:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-4px);
+    }
+
+    /* Details Section */
+    .details-section {
+        margin-top: 80px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    .details-section h2 {
+        color: var(--platinum);
+        margin-bottom: 20px;
+        font-size: 32px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .details-section p {
+        color: var(--chrome);
+        line-height: 1.8;
+        font-weight: 300;
+    }
+
+    /* Services Section */
+    .services-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .services-content h2 {
+        font-size: 56px;
+        font-weight: 700;
+        margin-bottom: 60px;
+        background: linear-gradient(135deg, #FFFFFF, #C0C0C0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 40px;
+    }
+
+    .package-card {
+        min-height: 500px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .package-card h3 {
+        font-size: 24px;
+        color: var(--platinum);
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .package-card .price {
+        font-size: 36px;
+        font-weight: 700;
+        margin: 15px 0 25px;
+        background: linear-gradient(135deg, #FFFFFF, #C0C0C0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .package-card ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 25px;
+    }
+
+    .package-card ul li {
+        padding: 12px 0;
+        color: var(--chrome);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-weight: 300;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-row {
+        margin-top: 30px;
+        font-size: 16px;
+        color: var(--chrome);
+        font-weight: 300;
+    }
+
+    .info-row a {
+        color: var(--platinum);
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .info-row a:hover {
+        color: white;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 0;
+        text-align: center;
+        color: var(--chrome);
+        font-size: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    /* Reveal Animation */
+    .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.inview {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Loader */
+    .loader-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background: #000000;
+        transition: opacity .8s ease;
+    }
+
+    .logo-text {
+        font-size: 4rem;
+        font-weight: 800;
+        letter-spacing: 12px;
+        background: linear-gradient(90deg, #404040, #FFFFFF, #C0C0C0, #404040);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: chromeShine 3s linear infinite;
+    }
+
+    @keyframes chromeShine {
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
+    }
+
+    .loader-container .bar {
+        margin-top: 30px;
+        width: 280px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        border-radius: 2px;
+    }
+
+    .loader-container .progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #808080, #FFFFFF, #808080);
+        animation: loadbar 2.5s ease-in-out infinite;
+    }
+
+    @keyframes loadbar {
+        0% { width: 0%; }
+        50% { width: 100%; }
+        100% { width: 0%; }
+    }
+
+    .hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 101;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 2px;
+        margin: 5px auto;
+        background-color: var(--silver);
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+        .brand { display: none; }
+    }
+
+    @media (max-width: 900px) {
+        .hero-content h1 { font-size: 64px; }
+        .hero-content p { font-size: 22px; }
+        .pricing-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 500px) {
+        .hero-content h1 { font-size: 48px; }
+        .menu-toggle { display: block; }
+        .nav-actions {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(100%);
+            transition: transform 0.4s ease-in-out;
+            z-index: 99;
+        }
+        .nav-inner.menu-open .nav-actions {
+            transform: translateX(0);
+        }
+        .nav-actions a {
+            font-size: 28px;
+            padding: 20px 0;
+        }
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="loader-container" id="loader">
+        <h1 class="logo-text">REXORA REVE</h1>
+        <div class="bar"><div class="progress"></div></div>
+    </div>
+
+
+<header class="header">
+    <div class="container nav-inner">
+        <img src="assets/logo.png" alt="REXORA REVE" width="50" height="50" style="border-radius: 50%; border: 2px solid rgba(255,255,255,0.2);">
+        <div class="brand">REXORA REVE</div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="nav-actions">
+            <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
+           
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </div>
+</header>
+
+<section class="section" id="home">
+    <div class="chrome-ray"></div>
+    <div class="chrome-ray"></div>
+    <div class="chrome-ray"></div>
+    <div class="chrome-ray"></div>
+    <div class="chrome-ray"></div>
+    <div class="container hero-content">
+        <h1 class="reveal">REXORA REVE</h1>
+        <p class="reveal" style="transition-delay: 0.2s;">Scale Beyond Limits</p>
+        <div class="reveal" style="transition-delay: 0.4s;">
+            <a href="services.html" class="cta-btn primary">VIEW SERVICES</a>
+            <a href="contact.html " class="cta-btn secondary">GET IN TOUCH</a>
+        </div>
+        <div class="details-section reveal" style="transition-delay: 0.6s;">
+            <h2>About Rexora Reve</h2>
+            <p>
+              Rexora Reve is a next–gen digital marketing and brand design studio founded by <strong>Ritik Raj</strong>.
+              Built on creativity, strategy, and precision — we help businesses transform their presence into brands that stand out.
+              From digital campaigns to sleek visuals, every project under Rexora Reve reflects a single mission: 
+              <em>Scale Beyond Limits.</em>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="services">
+    <div class="container services-content">
+        <h2 class="reveal">Our Services</h2>
+        <div class="pricing-grid">
+            <div class="glass-card package-card reveal" style="transition-delay: 0.1s;">
+                <div>
+                    <h3>⭐ Basic Package</h3>
+                    <div class="price">₹1,999 /mo</div>
+                    <ul>
+                        <li>4 Social Media Posts / month</li>
+                        <li>1 Promotional Video</li>
+                        <li>Account Setup & Branding</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="cta-btn primary">START BASIC</a>
+            </div>
+            <div class="glass-card package-card reveal" style="transition-delay: 0.2s;">
+                <div>
+                    <h3>🚀 Standard Package</h3>
+                    <div class="price">₹3,999 /mo</div>
+                    <ul>
+                        <li>8 Social Media Posts / month</li>
+                        <li>2 Promotional Videos</li>
+                        <li>Account Optimization</li>
+                        <li>Monthly Growth Report</li>
+                    </ul>
+                </div>
+                <a href="contact.html " class="cta-btn primary">GO STANDARD</a>
+            </div>
+            <div class="glass-card package-card reveal" style="transition-delay: 0.3s;">
+                <div>
+                    <h3>🔥 Premium Package</h3>
+                    <div class="price">₹5,999 /mo</div>
+                    <ul>
+                        <li>12 Social Media Posts / month</li>
+                        <li>4 Promotional Videos</li>
+                        <li>YouTube Management</li>
+                        <li>SEO + Strategy Support</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="cta-btn primary">UNLOCK PREMIUM</a>
+            </div>
+            <div class="glass-card package-card reveal" style="transition-delay: 0.4s;">
+                <div>
+                    <h3>💎 Custom Projects</h3>
+                    <div class="price">Quote Based</div>
+                    <ul>
+                        <li>Full Website Development</li>
+                        <li>Large-Scale Campaigns</li>
+                        <li>Dedicated Management</li>
+                        <li>Advanced Analytics</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="cta-btn secondary">GET A QUOTE</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container contact-content">
+        <a href="contact.html" class="cta-btn primary">GET IN TOUCH</a>
+        <div class="info-row">
+            Or contact us directly:<br>
+            <a href="mailto:rexora35@gmail.com">rexora35@gmail.com</a> | 
+            <a href="https://www.instagram.com/rexoraofiicial_35" target="_blank">@rexoraofiicial_35</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+  © 2025 Rexora Reve. Built & Managed by <strong>Ritik Raj</strong> — Founder of Rexora Reve.
+</footer>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('inview');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navInner = document.querySelector('.nav-inner');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navInner.classList.toggle('menu-open');
+                menuToggle.classList.toggle('is-active');
+            });
+        }
+    });
+
+    const LOADING_DURATION = 2500;
+    const body = document.body;
+    body.style.overflow = 'hidden';
+    body.style.height = '100vh';
+
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            loader.classList.add("hidden");
+            body.style.overflow = '';
+            body.style.height = '';
+            setTimeout(() => loader.remove(), 800);
+        }, LOADING_DURATION);
+    });
+</script>
+
+
+</body>
+</html>
