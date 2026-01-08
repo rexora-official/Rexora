@@ -23,7 +23,7 @@
       "name": "Ritik Raj",
       "jobTitle": "Founder & Creative Director",
       "sameAs": [
-        "https://www.instagram.com/rexoraofiicial_35/",
+        "https://www.instagram.com/rexora_reve/",
         "mailto:rexora35@gmail.com"
       ]
     },
@@ -82,10 +82,139 @@
         scroll-behavior: smooth;
     }
 
+    /* Particle Canvas */
+    #particle-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* 3D Parallax Container */
+    .parallax-wrapper {
+        perspective: 1000px;
+        perspective-origin: 50% 50%;
+        transform-style: preserve-3d;
+    }
+
+    /* Silver Dust Overlay - Multiple Layers for 3D */
+    .dust-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        pointer-events: none;
+        will-change: transform;
+    }
+
+    .dust-layer-1 {
+        z-index: 2;
+        background-image: 
+            radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.4), transparent),
+            radial-gradient(1.5px 1.5px at 80px 120px, rgba(192,192,192,0.5), transparent),
+            radial-gradient(1px 1px at 150px 60px, rgba(255,255,255,0.3), transparent),
+            radial-gradient(2px 2px at 200px 180px, rgba(192,192,192,0.4), transparent),
+            radial-gradient(1px 1px at 280px 40px, rgba(255,255,255,0.35), transparent),
+            radial-gradient(1.5px 1.5px at 350px 150px, rgba(192,192,192,0.45), transparent),
+            radial-gradient(1px 1px at 420px 90px, rgba(255,255,255,0.3), transparent),
+            radial-gradient(2px 2px at 500px 200px, rgba(192,192,192,0.5), transparent);
+        background-size: 550px 250px;
+    }
+
+    .dust-layer-2 {
+        z-index: 1;
+        background-image: 
+            radial-gradient(1.5px 1.5px at 50px 80px, rgba(255,255,255,0.25), transparent),
+            radial-gradient(1px 1px at 130px 40px, rgba(192,192,192,0.3), transparent),
+            radial-gradient(2px 2px at 220px 160px, rgba(255,255,255,0.2), transparent),
+            radial-gradient(1px 1px at 300px 100px, rgba(192,192,192,0.25), transparent),
+            radial-gradient(1.5px 1.5px at 380px 200px, rgba(255,255,255,0.3), transparent),
+            radial-gradient(1px 1px at 460px 60px, rgba(192,192,192,0.2), transparent);
+        background-size: 500px 280px;
+    }
+
+    .dust-layer-3 {
+        z-index: 0;
+        background-image: 
+            radial-gradient(2px 2px at 70px 100px, rgba(255,255,255,0.15), transparent),
+            radial-gradient(1.5px 1.5px at 180px 50px, rgba(192,192,192,0.2), transparent),
+            radial-gradient(1px 1px at 260px 180px, rgba(255,255,255,0.15), transparent),
+            radial-gradient(2px 2px at 350px 80px, rgba(192,192,192,0.18), transparent),
+            radial-gradient(1.5px 1.5px at 440px 150px, rgba(255,255,255,0.2), transparent);
+        background-size: 480px 220px;
+    }
+
+    /* Floating Orbs with 3D Depth */
+    .floating-orb {
+        position: fixed;
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(80px);
+        will-change: transform;
+    }
+
+    .orb-1 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(192,192,192,0.25), transparent 70%);
+        top: 5%;
+        left: -15%;
+        z-index: 0;
+    }
+
+    .orb-2 {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+        top: 50%;
+        right: -10%;
+        z-index: 0;
+    }
+
+    .orb-3 {
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(circle, rgba(150,150,150,0.2), transparent 70%);
+        bottom: 5%;
+        left: 25%;
+        z-index: 0;
+    }
+
+    .orb-4 {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(200,200,200,0.15), transparent 70%);
+        top: 30%;
+        left: 50%;
+        z-index: 0;
+    }
+
+    /* Gradient Mesh Background */
+    .gradient-mesh {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background: 
+            radial-gradient(ellipse at 15% 15%, rgba(50,50,50,0.4) 0%, transparent 50%),
+            radial-gradient(ellipse at 85% 85%, rgba(40,40,40,0.4) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 50%, rgba(30,30,30,0.3) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 20%, rgba(35,35,35,0.3) 0%, transparent 40%),
+            radial-gradient(ellipse at 20% 80%, rgba(45,45,45,0.25) 0%, transparent 45%);
+    }
+
     .container {
         max-width: var(--max-width);
         margin: 0 auto;
         padding: 0 20px;
+        position: relative;
+        z-index: 10;
     }
 
     .section {
@@ -94,29 +223,48 @@
         display: flex;
         align-items: center;
         position: relative;
+        transform-style: preserve-3d;
     }
 
     /* Premium Glass Card */
     .glass-card {
-        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03));
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: var(--radius);
         box-shadow: 
             0 8px 32px rgba(0, 0, 0, 0.8),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.2);
         padding: 30px;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .glass-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+        transition: left 0.6s;
+    }
+
+    .glass-card:hover::before {
+        left: 100%;
     }
 
     .glass-card:hover {
-        transform: translateY(-12px);
+        transform: translateY(-12px) scale(1.02);
         box-shadow: 
-            0 20px 60px rgba(0, 0, 0, 0.9),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15),
-            0 0 40px rgba(192, 192, 192, 0.1);
-        border-color: rgba(255, 255, 255, 0.2);
+            0 25px 70px rgba(0, 0, 0, 0.9),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 0 60px rgba(192, 192, 192, 0.08);
+        border-color: rgba(255, 255, 255, 0.25);
     }
 
     /* Chrome Navigation */
@@ -125,9 +273,9 @@
         top: 0;
         z-index: 100;
         padding: 20px 0;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(30px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .nav-inner {
@@ -182,22 +330,23 @@
     /* Metallic Background Elements */
     .chrome-ray {
         position: absolute;
-        width: 2px;
+        width: 1px;
         height: 100%;
-        background: linear-gradient(180deg, transparent, rgba(192, 192, 192, 0.1), transparent);
+        background: linear-gradient(180deg, transparent, rgba(192, 192, 192, 0.2), transparent);
         animation: shimmer 8s infinite linear;
     }
 
     @keyframes shimmer {
-        0%, 100% { opacity: 0.1; }
-        50% { opacity: 0.3; }
+        0%, 100% { opacity: 0.1; transform: translateY(-10%); }
+        50% { opacity: 0.5; transform: translateY(10%); }
     }
 
     .chrome-ray:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .chrome-ray:nth-child(2) { left: 30%; animation-delay: 2s; }
-    .chrome-ray:nth-child(3) { left: 50%; animation-delay: 4s; }
-    .chrome-ray:nth-child(4) { left: 70%; animation-delay: 6s; }
-    .chrome-ray:nth-child(5) { right: 10%; animation-delay: 1s; }
+    .chrome-ray:nth-child(2) { left: 25%; animation-delay: 1.5s; }
+    .chrome-ray:nth-child(3) { left: 40%; animation-delay: 3s; }
+    .chrome-ray:nth-child(4) { left: 55%; animation-delay: 4.5s; }
+    .chrome-ray:nth-child(5) { left: 70%; animation-delay: 6s; }
+    .chrome-ray:nth-child(6) { left: 85%; animation-delay: 7.5s; }
 
     /* Hero Section */
     .hero-content {
@@ -216,7 +365,8 @@
         background: linear-gradient(135deg, #FFFFFF, #C0C0C0, #808080);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+        text-shadow: 0 0 80px rgba(255, 255, 255, 0.15);
+        position: relative;
     }
 
     .hero-content p {
@@ -270,7 +420,7 @@
 
     .cta-btn.primary:hover {
         transform: translateY(-4px);
-        box-shadow: 0 12px 48px rgba(192, 192, 192, 0.2);
+        box-shadow: 0 15px 50px rgba(192, 192, 192, 0.25);
         border-color: rgba(255, 255, 255, 0.4);
     }
 
@@ -281,7 +431,7 @@
     }
 
     .cta-btn.secondary:hover {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.08);
         transform: translateY(-4px);
     }
 
@@ -292,6 +442,11 @@
         margin-left: auto;
         margin-right: auto;
         text-align: left;
+        background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .details-section h2 {
@@ -330,6 +485,30 @@
         margin-top: 40px;
     }
 
+    /* SVG Package Icons */
+    .package-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 20px;
+        opacity: 0.5;
+        transition: all 0.3s ease;
+    }
+
+    .glass-card:hover .package-icon {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+
+    .package-icon svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: rgba(192, 192, 192, 0.6);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
     .package-card {
         min-height: 500px;
         text-align: left;
@@ -343,6 +522,9 @@
         color: var(--platinum);
         margin-bottom: 20px;
         font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 
     .package-card .price {
@@ -365,6 +547,18 @@
         color: var(--chrome);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         font-weight: 300;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .package-card ul li::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: rgba(192, 192, 192, 0.4);
+        border-radius: 50%;
+        flex-shrink: 0;
     }
 
     /* Contact Section */
@@ -404,6 +598,20 @@
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         font-weight: 300;
         letter-spacing: 1px;
+        position: relative;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .footer a {
+        color: var(--platinum);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer a:hover {
+        color: white;
     }
 
     /* Reveal Animation */
@@ -418,7 +626,7 @@
         transform: none;
     }
 
-    /* Loader */
+    /* Loader - Clean with just logo text animation */
     .loader-container {
         height: 100vh;
         display: flex;
@@ -431,7 +639,7 @@
         width: 100%;
         z-index: 9999;
         background: #000000;
-        transition: opacity .8s ease;
+        transition: opacity 1s ease, visibility 1s ease;
     }
 
     .logo-text {
@@ -448,31 +656,6 @@
     @keyframes chromeShine {
         0% { background-position: 0% center; }
         100% { background-position: 200% center; }
-    }
-
-    .loader-container .bar {
-        margin-top: 30px;
-        width: 280px;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.1);
-        overflow: hidden;
-        border-radius: 2px;
-    }
-
-    .loader-container .progress {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 0%;
-        height: 100%;
-        background: linear-gradient(90deg, #808080, #FFFFFF, #808080);
-        animation: loadbar 2.5s ease-in-out infinite;
-    }
-
-    @keyframes loadbar {
-        0% { width: 0%; }
-        50% { width: 100%; }
-        100% { width: 0%; }
     }
 
     .hidden {
@@ -510,6 +693,7 @@
         .hero-content h1 { font-size: 64px; }
         .hero-content p { font-size: 22px; }
         .pricing-grid { grid-template-columns: 1fr; }
+        .logo-text { font-size: 2.5rem; letter-spacing: 6px; }
     }
 
     @media (max-width: 500px) {
@@ -536,177 +720,457 @@
             font-size: 28px;
             padding: 20px 0;
         }
+        .logo-text { font-size: 1.8rem; letter-spacing: 4px; }
     }
 </style>
-
-
 </head>
 <body>
+    <!-- Loader - Clean version with only logo text -->
     <div class="loader-container" id="loader">
         <h1 class="logo-text">REXORA REVE</h1>
-        <div class="bar"><div class="progress"></div></div>
     </div>
 
+    <!-- Background Elements -->
+    <div class="gradient-mesh"></div>
+    <div class="dust-layer dust-layer-1" id="dust1"></div>
+    <div class="dust-layer dust-layer-2" id="dust2"></div>
+    <div class="dust-layer dust-layer-3" id="dust3"></div>
+    <div class="floating-orb orb-1" id="orb1"></div>
+    <div class="floating-orb orb-2" id="orb2"></div>
+    <div class="floating-orb orb-3" id="orb3"></div>
+    <div class="floating-orb orb-4" id="orb4"></div>
+    <canvas id="particle-canvas"></canvas>
 
-<header class="header">
-    <div class="container nav-inner">
-        <img src="assets/logo.png" alt="REXORA REVE" width="50" height="50" style="border-radius: 50%; border: 2px solid rgba(255,255,255,0.2);">
-        <div class="brand">REXORA REVE</div>
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <nav class="nav-actions">
-            <a href="index.html">HOME</a>
-            <a href="services.html">SERVICES</a>
-           
-            <a href="contact.html">CONTACT</a>
-        </nav>
-    </div>
-</header>
-
-<section class="section" id="home">
-    <div class="chrome-ray"></div>
-    <div class="chrome-ray"></div>
-    <div class="chrome-ray"></div>
-    <div class="chrome-ray"></div>
-    <div class="chrome-ray"></div>
-    <div class="container hero-content">
-        <h1 class="reveal">REXORA REVE</h1>
-        <p class="reveal" style="transition-delay: 0.2s;">Scale Beyond Limits</p>
-        <div class="reveal" style="transition-delay: 0.4s;">
-            <a href="services.html" class="cta-btn primary">VIEW SERVICES</a>
-            <a href="contact.html " class="cta-btn secondary">GET IN TOUCH</a>
+    <header class="header">
+        <div class="container nav-inner">
+            <img src="assets/logo.png" alt="REXORA REVE" width="50" height="50" style="border-radius: 50%; border: 2px solid rgba(255,255,255,0.2);">
+            <div class="brand">REXORA REVE</div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-actions">
+                <a href="index.html">HOME</a>
+                <a href="services.html">SERVICES</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
         </div>
-        <div class="details-section reveal" style="transition-delay: 0.6s;">
-            <h2>About Rexora Reve</h2>
-            <p>
-              Rexora Reve is a next–gen digital marketing and brand design studio founded by <strong>Ritik Raj</strong>.
-              Built on creativity, strategy, and precision — we help businesses transform their presence into brands that stand out.
-              From digital campaigns to sleek visuals, every project under Rexora Reve reflects a single mission: 
-              <em>Scale Beyond Limits.</em>
-            </p>
-        </div>
-    </div>
-</section>
+    </header>
 
-<section class="section" id="services">
-    <div class="container services-content">
-        <h2 class="reveal">Our Services</h2>
-        <div class="pricing-grid">
-            <div class="glass-card package-card reveal" style="transition-delay: 0.1s;">
-                <div>
-                    <h3>⭐ Basic Package</h3>
-                    <div class="price">₹1,999 /mo</div>
-                    <ul>
-                        <li>4 Social Media Posts / month</li>
-                        <li>1 Promotional Video</li>
-                        <li>Account Setup & Branding</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="cta-btn primary">START BASIC</a>
+    <section class="section" id="home">
+        <div class="chrome-ray"></div>
+        <div class="chrome-ray"></div>
+        <div class="chrome-ray"></div>
+        <div class="chrome-ray"></div>
+        <div class="chrome-ray"></div>
+        <div class="chrome-ray"></div>
+        <div class="container hero-content">
+            <h1 class="reveal">REXORA REVE</h1>
+            <p class="reveal" style="transition-delay: 0.2s;">Scale Beyond Limits</p>
+            <div class="reveal" style="transition-delay: 0.4s;">
+                <a href="services.html" class="cta-btn primary">VIEW SERVICES</a>
+                <a href="contact.html" class="cta-btn secondary">GET IN TOUCH</a>
             </div>
-            <div class="glass-card package-card reveal" style="transition-delay: 0.2s;">
-                <div>
-                    <h3>🚀 Standard Package</h3>
-                    <div class="price">₹3,999 /mo</div>
-                    <ul>
-                        <li>8 Social Media Posts / month</li>
-                        <li>2 Promotional Videos</li>
-                        <li>Account Optimization</li>
-                        <li>Monthly Growth Report</li>
-                    </ul>
-                </div>
-                <a href="contact.html " class="cta-btn primary">GO STANDARD</a>
-            </div>
-            <div class="glass-card package-card reveal" style="transition-delay: 0.3s;">
-                <div>
-                    <h3>🔥 Premium Package</h3>
-                    <div class="price">₹5,999 /mo</div>
-                    <ul>
-                        <li>12 Social Media Posts / month</li>
-                        <li>4 Promotional Videos</li>
-                        <li>YouTube Management</li>
-                        <li>SEO + Strategy Support</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="cta-btn primary">UNLOCK PREMIUM</a>
-            </div>
-            <div class="glass-card package-card reveal" style="transition-delay: 0.4s;">
-                <div>
-                    <h3>💎 Custom Projects</h3>
-                    <div class="price">Quote Based</div>
-                    <ul>
-                        <li>Full Website Development</li>
-                        <li>Large-Scale Campaigns</li>
-                        <li>Dedicated Management</li>
-                        <li>Advanced Analytics</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="cta-btn secondary">GET A QUOTE</a>
+            <div class="details-section reveal" style="transition-delay: 0.6s;">
+                <h2>About Rexora Reve</h2>
+                <p>
+                    Rexora Reve is a next–gen digital marketing and brand design studio founded by <strong>Ritik Raj</strong>.
+                    Built on creativity, strategy, and precision — we help businesses transform their presence into brands that stand out.
+                    From digital campaigns to sleek visuals, every project under Rexora Reve reflects a single mission: 
+                    <em>Scale Beyond Limits.</em>
+                </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section" id="contact">
-    <div class="container contact-content">
-        <a href="contact.html" class="cta-btn primary">GET IN TOUCH</a>
-        <div class="info-row">
-            Or contact us directly:<br>
-            <a href="mailto:rexora35@gmail.com">rexora35@gmail.com</a> | 
-            <a href="https://www.instagram.com/rexoraofiicial_35" target="_blank">@rexoraofiicial_35</a>
+    <section class="section" id="services">
+        <div class="container services-content">
+            <h2 class="reveal">Our Services</h2>
+            <div class="pricing-grid">
+                <!-- Basic Package -->
+                <div class="glass-card package-card reveal" style="transition-delay: 0.1s;">
+                    <div>
+                        <div class="package-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <h3>Basic Package</h3>
+                        <div class="price">₹1,999 /mo</div>
+                        <ul>
+                            <li>4 Social Media Posts / month</li>
+                            <li>1 Promotional Video</li>
+                            <li>Account Setup & Branding</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="cta-btn primary">START BASIC</a>
+                </div>
+
+                <!-- Standard Package -->
+                <div class="glass-card package-card reveal" style="transition-delay: 0.2s;">
+                    <div>
+                        <div class="package-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Standard Package</h3>
+                        <div class="price">₹3,999 /mo</div>
+                        <ul>
+                            <li>8 Social Media Posts / month</li>
+                            <li>2 Promotional Videos</li>
+                            <li>Account Optimization</li>
+                            <li>Monthly Growth Report</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="cta-btn primary">GO STANDARD</a>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="glass-card package-card reveal" style="transition-delay: 0.3s;">
+                    <div>
+                        <div class="package-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                        <h3>Premium Package</h3>
+                        <div class="price">₹5,999 /mo</div>
+                        <ul>
+                            <li>12 Social Media Posts / month</li>
+                            <li>4 Promotional Videos</li>
+                            <li>YouTube Management</li>
+                            <li>SEO + Strategy Support</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="cta-btn primary">UNLOCK PREMIUM</a>
+                </div>
+
+                <!-- Custom Package -->
+                <div class="glass-card package-card reveal" style="transition-delay: 0.4s;">
+                    <div>
+                        <div class="package-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
+                                <line x1="12" y1="22" x2="12" y2="15.5"/>
+                                <polyline points="22 8.5 12 15.5 2 8.5"/>
+                                <polyline points="2 15.5 12 8.5 22 15.5"/>
+                                <line x1="12" y1="2" x2="12" y2="8.5"/>
+                            </svg>
+                        </div>
+                        <h3>Custom Projects</h3>
+                        <div class="price">Quote Based</div>
+                        <ul>
+                            <li>Full Website Development</li>
+                            <li>Large-Scale Campaigns</li>
+                            <li>Dedicated Management</li>
+                            <li>Advanced Analytics</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="cta-btn secondary">GET A QUOTE</a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="footer">
-  © 2025 Rexora Reve. Built & Managed by <strong>Ritik Raj</strong> — Founder of Rexora Reve.
-</footer>
+    <section class="section" id="contact">
+        <div class="container contact-content">
+            <h2 class="reveal" style="font-size: 48px; margin-bottom: 40px; background: linear-gradient(135deg, #FFFFFF, #C0C0C0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Let's Connect</h2>
+            <a href="contact.html" class="cta-btn primary reveal">GET IN TOUCH</a>
+            <div class="info-row reveal" style="transition-delay: 0.2s;">
+                Or contact us directly:<br>
+                <a href="mailto:rexora35@gmail.com">rexora35@gmail.com</a> | 
+                <a href="https://www.instagram.com/rexora_reve" target="_blank">@rexora_reve</a>
+            </div>
+        </div>
+    </section>
 
+    <footer class="footer">
+        © 2025 Rexora Reve. Built & Managed by <strong>Ritik Raj</strong> — Founder of Rexora Reve.<br>
+        <a href="https://www.instagram.com/rexora_reve" target="_blank" style="margin-top: 10px; display: inline-block;">@rexora_reve</a>
+    </footer>
 
+    <script>
+        // Enhanced Particle System with More Particles
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('particle-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.mouseX = 0;
+                this.mouseY = 0;
+                this.scrollY = 0;
+                this.lastScrollY = 0;
+                this.scrollSpeed = 0;
+                
+                this.resize();
+                this.createParticles();
+                this.bindEvents();
+                this.animate();
+            }
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const io = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('inview');
-                    observer.unobserve(entry.target);
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            createParticles() {
+                // Much more particles - 3x the original
+                const particleCount = Math.floor((this.canvas.width * this.canvas.height) / 4000);
+                
+                for (let i = 0; i < particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height * 3, // Extended height
+                        baseX: Math.random() * this.canvas.width,
+                        baseY: Math.random() * this.canvas.height * 3,
+                        size: Math.random() * 2.5 + 0.3,
+                        speedX: (Math.random() - 0.5) * 0.4,
+                        speedY: (Math.random() - 0.5) * 0.4,
+                        opacity: Math.random() * 0.6 + 0.1,
+                        depth: Math.random() * 5 + 1, // Increased depth range for stronger 3D
+                        twinkle: Math.random() * Math.PI * 2,
+                        twinkleSpeed: Math.random() * 0.02 + 0.01
+                    });
                 }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        
-        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+            }
 
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navInner = document.querySelector('.nav-inner');
-        
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                navInner.classList.toggle('menu-open');
-                menuToggle.classList.toggle('is-active');
-            });
+            bindEvents() {
+                window.addEventListener('resize', () => {
+                    this.resize();
+                    this.particles = [];
+                    this.createParticles();
+                });
+
+                window.addEventListener('mousemove', (e) => {
+                    this.mouseX = e.clientX;
+                    this.mouseY = e.clientY;
+                });
+
+                window.addEventListener('scroll', () => {
+                    this.scrollY = window.scrollY;
+                    this.scrollSpeed = this.scrollY - this.lastScrollY;
+                    this.lastScrollY = this.scrollY;
+                });
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.particles.forEach((particle, index) => {
+                    // Strong 3D parallax effect based on scroll and depth
+                    const parallaxMultiplier = particle.depth * 0.15;
+                    const parallaxOffset = this.scrollY * parallaxMultiplier;
+                    
+                    // Add scroll velocity for extra 3D feel
+                    const velocityOffset = this.scrollSpeed * particle.depth * 0.3;
+                    
+                    // Subtle floating movement
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+                    
+                    // Twinkle effect
+                    particle.twinkle += particle.twinkleSpeed;
+                    const twinkleOpacity = particle.opacity * (0.7 + 0.3 * Math.sin(particle.twinkle));
+
+                    // Mouse influence with depth consideration
+                    const dx = this.mouseX - particle.x;
+                    const dy = (this.mouseY + this.scrollY) - particle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 200) {
+                        const force = (200 - distance) / 200;
+                        const depthFactor = 1 / particle.depth;
+                        particle.x -= dx * force * 0.02 * depthFactor;
+                        particle.y -= dy * force * 0.02 * depthFactor;
+                    }
+
+                    // Boundary check with wrap-around
+                    if (particle.x < -50) particle.x = this.canvas.width + 50;
+                    if (particle.x > this.canvas.width + 50) particle.x = -50;
+                    if (particle.y < -50) particle.y = this.canvas.height * 3 + 50;
+                    if (particle.y > this.canvas.height * 3 + 50) particle.y = -50;
+
+                    // Calculate draw position with parallax
+                    let drawY = particle.y - parallaxOffset - velocityOffset;
+                    
+                    // Wrap around for seamless scrolling
+                    while (drawY < -50) drawY += this.canvas.height * 3;
+                    while (drawY > this.canvas.height + 50) drawY -= this.canvas.height * 3;
+
+                    // Only draw if visible
+                    if (drawY > -50 && drawY < this.canvas.height + 50) {
+                        // Size scales with depth (closer = bigger)
+                        const depthSize = particle.size * (1 + (6 - particle.depth) * 0.15);
+                        
+                        // Draw particle with glow
+                        const gradient = this.ctx.createRadialGradient(
+                            particle.x, drawY, 0,
+                            particle.x, drawY, depthSize * 3
+                        );
+                        gradient.addColorStop(0, `rgba(220, 220, 220, ${twinkleOpacity})`);
+                        gradient.addColorStop(0.5, `rgba(192, 192, 192, ${twinkleOpacity * 0.3})`);
+                        gradient.addColorStop(1, 'rgba(192, 192, 192, 0)');
+                        
+                        this.ctx.beginPath();
+                        this.ctx.arc(particle.x, drawY, depthSize * 3, 0, Math.PI * 2);
+                        this.ctx.fillStyle = gradient;
+                        this.ctx.fill();
+
+                        // Core of particle
+                        this.ctx.beginPath();
+                        this.ctx.arc(particle.x, drawY, depthSize, 0, Math.PI * 2);
+                        this.ctx.fillStyle = `rgba(255, 255, 255, ${twinkleOpacity})`;
+                        this.ctx.fill();
+
+                        // Connect nearby particles (with depth consideration)
+                        for (let j = index + 1; j < this.particles.length; j++) {
+                            const other = this.particles[j];
+                            
+                            // Only connect particles at similar depths
+                            if (Math.abs(particle.depth - other.depth) > 2) continue;
+                            
+                            const otherParallax = this.scrollY * other.depth * 0.15;
+                            let otherDrawY = other.y - otherParallax;
+                            while (otherDrawY < -50) otherDrawY += this.canvas.height * 3;
+                            while (otherDrawY > this.canvas.height + 50) otherDrawY -= this.canvas.height * 3;
+                            
+                            if (otherDrawY < -50 || otherDrawY > this.canvas.height + 50) continue;
+                            
+                            const dist = Math.sqrt(
+                                Math.pow(particle.x - other.x, 2) + 
+                                Math.pow(drawY - otherDrawY, 2)
+                            );
+                            
+                            if (dist < 120) {
+                                this.ctx.beginPath();
+                                this.ctx.moveTo(particle.x, drawY);
+                                this.ctx.lineTo(other.x, otherDrawY);
+                                this.ctx.strokeStyle = `rgba(192, 192, 192, ${0.15 * (1 - dist / 120)})`;
+                                this.ctx.lineWidth = 0.5;
+                                this.ctx.stroke();
+                            }
+                        }
+                    }
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
         }
-    });
 
-    const LOADING_DURATION = 2500;
-    const body = document.body;
-    body.style.overflow = 'hidden';
-    body.style.height = '100vh';
+        // 3D Parallax for background elements
+        class Parallax3D {
+            constructor() {
+                this.elements = {
+                    dust1: { el: document.getElementById('dust1'), speed: 0.1 },
+                    dust2: { el: document.getElementById('dust2'), speed: 0.2 },
+                    dust3: { el: document.getElementById('dust3'), speed: 0.35 },
+                    orb1: { el: document.getElementById('orb1'), speed: 0.08, scaleSpeed: 0.0001 },
+                    orb2: { el: document.getElementById('orb2'), speed: 0.15, scaleSpeed: 0.00015 },
+                    orb3: { el: document.getElementById('orb3'), speed: 0.25, scaleSpeed: 0.0002 },
+                    orb4: { el: document.getElementById('orb4'), speed: 0.12, scaleSpeed: 0.00012 }
+                };
+                
+                this.scrollY = 0;
+                this.targetScrollY = 0;
+                this.mouseX = 0;
+                this.mouseY = 0;
+                
+                this.bindEvents();
+                this.animate();
+            }
 
-    window.addEventListener("load", () => {
-        setTimeout(() => {
-            const loader = document.getElementById("loader");
-            loader.classList.add("hidden");
-            body.style.overflow = '';
-            body.style.height = '';
-            setTimeout(() => loader.remove(), 800);
-        }, LOADING_DURATION);
-    });
-</script>
+            bindEvents() {
+                window.addEventListener('scroll', () => {
+                    this.targetScrollY = window.scrollY;
+                });
 
+                window.addEventListener('mousemove', (e) => {
+                    this.mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                    this.mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+                });
+            }
 
+            animate() {
+                // Smooth scroll interpolation
+                this.scrollY += (this.targetScrollY - this.scrollY) * 0.1;
+
+                // Update dust layers
+                if (this.elements.dust1.el) {
+                    this.elements.dust1.el.style.transform = `translateY(${-this.scrollY * this.elements.dust1.speed}px) translateX(${this.mouseX * 5}px)`;
+                }
+                if (this.elements.dust2.el) {
+                    this.elements.dust2.el.style.transform = `translateY(${-this.scrollY * this.elements.dust2.speed}px) translateX(${this.mouseX * 10}px)`;
+                }
+                if (this.elements.dust3.el) {
+                    this.elements.dust3.el.style.transform = `translateY(${-this.scrollY * this.elements.dust3.speed}px) translateX(${this.mouseX * 15}px)`;
+                }
+
+                // Update orbs with scale and position
+                Object.keys(this.elements).forEach(key => {
+                    if (key.startsWith('orb') && this.elements[key].el) {
+                        const item = this.elements[key];
+                        const yOffset = this.scrollY * item.speed;
+                        const scale = 1 + this.scrollY * item.scaleSpeed;
+                        const mouseOffsetX = this.mouseX * 20 * item.speed;
+                        const mouseOffsetY = this.mouseY * 20 * item.speed;
+                        
+                        item.el.style.transform = `translateY(${yOffset}px) translateX(${mouseOffsetX}px) scale(${scale})`;
+                    }
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize systems
+            new ParticleSystem();
+            new Parallax3D();
+
+            // Intersection Observer for reveal animations
+            const io = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('inview');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navInner = document.querySelector('.nav-inner');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    navInner.classList.toggle('menu-open');
+                    menuToggle.classList.toggle('is-active');
+                });
+            }
+        });
+
+        // Loader
+        const LOADING_DURATION = 2500;
+        const body = document.body;
+        body.style.overflow = 'hidden';
+        body.style.height = '100vh';
+
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                const loader = document.getElementById("loader");
+                loader.classList.add("hidden");
+                body.style.overflow = '';
+                body.style.height = '';
+                setTimeout(() => loader.remove(), 1000);
+            }, LOADING_DURATION);
+        });
+    </script>
 </body>
 </html>
